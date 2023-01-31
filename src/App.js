@@ -12,10 +12,15 @@ function App() {
   }
 
   const listOfItems = () => {
-    setItems((oldItems) => {
-      return [...oldItems, inputList]
-    })
-    setInputList('')
+    if (inputList === "") {
+      alert("No data found!")
+    } else {
+      setItems((oldItems) => {
+        return [...oldItems, inputList]
+      })
+      setInputList('')
+    }
+
   }
 
   const deleteItem = (id) => {
